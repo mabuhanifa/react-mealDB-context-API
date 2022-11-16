@@ -4,10 +4,9 @@ import mealReducer from "./reducer";
 const MealContext = createContext();
 
 const initialState = {
-  meals: [],
-  singleMeal: {},
+  meals: [54],
+  singleMeal: { a: "a" },
 };
-
 
 const Meal = ({ children }) => {
   const [state, dispatch] = useReducer(mealReducer, initialState);
