@@ -1,14 +1,19 @@
-
-import { useMeal } from './api/context';
-import './App.css';
+import { useMeal } from "./api/context";
+import "./App.css";
 
 function App() {
-  const {state,dispatch} = useMeal();
-  console.log(state,dispatch);
-  
+  const { state:{meals}, dispatch } = useMeal();
+  const loadData = () => {
+    dispatch({
+      type: "ADD_MEALS",
+      payload: { new: "data" },
+    });
+  };
+
   return (
-    <div >
-   <button></button>
+    <div>
+      <p>{JSON.stringify(meals)}</p>
+      <button onClick={loadData}>load</button>
     </div>
   );
 }
